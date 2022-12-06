@@ -40,9 +40,9 @@ for ((LINE = 0; LINE < LINES; LINE += 3)); do
     SED_LINE_1=$((LINE + 1))
     SED_LINE_2=$((LINE + 2))
     SED_LINE_3=$((LINE + 3))
-    X="$(sed "${SED_LINE_1}q;d" day_3_input)"
-    Y="$(sed "${SED_LINE_2}q;d" day_3_input)"
-    Z="$(sed "${SED_LINE_3}q;d" day_3_input)"
+    X="$(sed "${SED_LINE_1}q;d" "${INPUT}")"
+    Y="$(sed "${SED_LINE_2}q;d" "${INPUT}")"
+    Z="$(sed "${SED_LINE_3}q;d" "${INPUT}")"
     XY=$(common "${X}" "${Y}")
     XYZ=$(common "${XY}" "${Z}")
     PRIORITY="$(priority "${XYZ}")"
